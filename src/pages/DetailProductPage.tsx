@@ -12,9 +12,7 @@ interface Props {
 
 export const DetailsProductPage:FC<Props> = ({ product }) => {
 
-
     const { images } = product
-
 
     return (
         <div className="wrapper">
@@ -29,8 +27,9 @@ export const DetailsProductPage:FC<Props> = ({ product }) => {
                 <img className='imgage-product' src={ images[0] } alt={ product.brand } />
                 <h4>{ product.description }</h4>
             </div>
+                <p>Valoracion { '★'.repeat( product.rating ).padEnd(5,'☆') }</p>
             <div className="price-card">
-                ${product.price} /<span className='stock-item'>Stock:  { product.stock }</span>
+                { product.price.toLocaleString("es-AR" ,{ style: "currency", currency:'ARS'})} /<span className='stock-item'>Stock:  { product.stock }</span>
             </div>
             </div>
         </div>

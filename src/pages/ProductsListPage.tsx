@@ -50,6 +50,7 @@ export const ProductsListPage = () => {
             setIsReadyChequed(false)
         }
             setSetSelected(buffer)
+            console.log('hol')
     }
 
 
